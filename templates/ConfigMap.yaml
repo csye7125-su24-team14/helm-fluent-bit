@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluent-bit-cluster-info
+data:
+  cluster.name: {{ .Values.clusterConfig.name }}
+  http.port: ""
+  http.server: {{ .Values.clusterConfig.httpServer | quote }}
+  logs.region: {{ .Values.clusterConfig.region }}
+  read.head: {{ .Values.clusterConfig.readHead | quote }}
+  read.tail: "On"
